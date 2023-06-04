@@ -530,6 +530,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: shelf
       objectReference: {fileID: 0}
+    - target: {fileID: 6824241290725859361, guid: 2c02a2e25e114974fab45137a39e53d9, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6824241290725859361, guid: 2c02a2e25e114974fab45137a39e53d9, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 3876542345217667742, guid: 2c02a2e25e114974fab45137a39e53d9, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -680,6 +688,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: post proces enzo
       objectReference: {fileID: 0}
+    - target: {fileID: 3014693989753496762, guid: a9856306d149693478dda3837a6a3128, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3014693989753496764, guid: a9856306d149693478dda3837a6a3128, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -761,8 +773,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0badbdd1896093541be95c862e832da3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ScreenMatte: {fileID: 2100000, guid: 50c2c4144c261a64fb6689f16d3c6d41, type: 2}
   collided: 0
   pressE: {fileID: 238111695}
+  shader: 0
 --- !u!65 &2054067119
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -7,8 +7,10 @@ using UnityEngine.SceneManagement;
 
 public class CollisionBehaviour : MonoBehaviour
 {
+    public Material ScreenMatte;
     public bool collided = false;
     public GameObject pressE;
+    public float shader;
 
     private void Start()
     {
@@ -20,19 +22,30 @@ public class CollisionBehaviour : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             pressE.SetActive(true);
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                collided = true;
-                print("yay");
-            }
-
+            print("PressE");
+            collided = true;
         }
-    }
+}
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             pressE.SetActive(false);
+            collided = false;
+        }
+    }
+    public void Update()
+    {
+        if (collided == true)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                print("yay");
+                SceneManager.LoadScene("End");
+                ScreenMatte.SetFloat("NoiseAmount", 100);
+                ScreenMatte.SetFloat("GlitchStrength", 100);
+                ScreenMatte.SetFloat("ScanLineStrength", 0);
+            }
         }
     }
 }
