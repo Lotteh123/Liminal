@@ -15,6 +15,9 @@ public class CollisionBehaviour : MonoBehaviour
     private void Start()
     {
         pressE.gameObject.SetActive(false);
+        ScreenMatte.SetFloat("_NoiseAmount", 0);
+        ScreenMatte.SetFloat("_GlitchStrength", 0);
+        ScreenMatte.SetFloat("_ScanLineStrength", 1);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -42,9 +45,9 @@ public class CollisionBehaviour : MonoBehaviour
             {
                 print("yay");
                 SceneManager.LoadScene("End");
-                ScreenMatte.SetFloat("NoiseAmount", 100);
-                ScreenMatte.SetFloat("GlitchStrength", 100);
-                ScreenMatte.SetFloat("ScanLineStrength", 0);
+                ScreenMatte.SetFloat("_NoiseAmount", 100);
+                ScreenMatte.SetFloat("_GlitchStrength", 100);
+                ScreenMatte.SetFloat("_ScanLineStrength", 0);
             }
         }
     }
